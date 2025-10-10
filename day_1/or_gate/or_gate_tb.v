@@ -18,4 +18,3 @@ $dumpfile("wave.vcd");
 $dumpvars;
 end
 endmodule
-
