@@ -1,0 +1,41 @@
+$date
+	Sun Oct 12 07:06:31 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module parity_generator $end
+$var wire 4 ! a [3:0] $end
+$var wire 1 " y $end
+$upscope $end
+$scope module parity_generator_tb $end
+$var wire 1 # y $end
+$var reg 4 $ a [3:0] $end
+$scope module inst $end
+$var wire 4 % a [3:0] $end
+$var reg 1 # y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1 %
+b1 $
+1#
+x"
+bz !
+$end
+#5
+0#
+b11 $
+b11 %
+#10
+b1111 $
+b1111 %
+#15
