@@ -1,3 +1,5 @@
 *.vcd
 *.vvp
 a.out
+test
+wave.vcd
