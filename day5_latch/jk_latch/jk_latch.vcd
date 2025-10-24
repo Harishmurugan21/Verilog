@@ -1,0 +1,75 @@
+$date
+	Fri Oct 24 04:39:55 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module jk_latch_tb $end
+$var wire 1 ! q $end
+$var reg 1 " clk $end
+$var reg 1 # j $end
+$var reg 1 $ k $end
+$var reg 1 % rst $end
+$scope module test $end
+$var wire 1 " clk $end
+$var wire 1 # j $end
+$var wire 1 $ k $end
+$var wire 1 % rst $end
+$var reg 1 ! q $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1%
+0$
+1#
+0"
+0!
+$end
+#3
+0%
+#5
+0#
+1"
+#7
+1$
+#10
+0"
+#11
+1#
+#13
+0#
+#15
+1"
+#19
+1!
+1#
+0$
+#20
+0"
+#21
+0#
+1$
+#25
+1#
+0$
+1"
+#27
+0!
+0#
+1$
+#30
+0"
+#31
+0$
+#33
+1$
+#35
+1"
