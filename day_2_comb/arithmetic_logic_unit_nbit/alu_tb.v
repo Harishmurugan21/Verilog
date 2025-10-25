@@ -1,8 +1,8 @@
 module alu_tb ();
-parameter n=4;
+parameter n=8;
 reg [n-1:0]a,b;
 reg control;
-reg [n-2:0]sel;
+reg [2:0]sel;
 
 wire [n-1:0]y;
 wire cout;
