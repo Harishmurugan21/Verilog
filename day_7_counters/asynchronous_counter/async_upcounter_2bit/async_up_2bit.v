@@ -1,8 +1,11 @@
 module t_ff(input clk,rst,output reg q);
 
 
-always @ (negedge clk or posedge rst)
+always @ (negedge clk)
 begin
+	
+	
+	
 	if (rst)
 		q<=0;
 	else
