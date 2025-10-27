@@ -4,7 +4,7 @@ reg clk,rst,serial_in;
 wire [3:0]q;
 
 
-siso inst (clk,rst,serial_in,q);
+siso inst (clk,rst,serial_in,q,serial_out);
 
 initial begin
 	clk=0;
@@ -14,7 +14,7 @@ always #5 clk=~clk;
 
 //stimulus generation
 initial begin
-	$monitor("time=%0t |clk=%b |rst=%b |serial_in=%b | q=%b |",$time,clk,rst,serial_in,q);
+	$monitor("time=%0t |clk=%b |rst=%b |serial_in=%b | q=%b |serial_out=%b |",$time,clk,rst,serial_in,q,serial_out);
 	$dumpfile("siso.vcd");
 	$dumpvars;
 
