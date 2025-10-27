@@ -1,0 +1,95 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x63e38569ea70 .scope module, "piso_tb" "piso_tb" 2 1;
+ .timescale 0 0;
+v0x63e3856b2f00_0 .var "clk", 0 0;
+v0x63e3856b2fc0_0 .var "in", 3 0;
+v0x63e3856b3090_0 .var "load_shift", 0 0;
+v0x63e3856b3190_0 .net "qout", 0 0, L_0x63e3856b3350;  1 drivers
+v0x63e3856b3260_0 .var "rst", 0 0;
+S_0x63e38569ec00 .scope module, "inst" "piso" 2 7, 3 1 0, S_0x63e38569ea70;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 1 "load_shift";
+    .port_info 3 /INPUT 4 "in";
+    .port_info 4 /OUTPUT 1 "out";
+v0x63e38569ede0_0 .net "clk", 0 0, v0x63e3856b2f00_0;  1 drivers
+v0x63e3856b2a00_0 .net "in", 3 0, v0x63e3856b2fc0_0;  1 drivers
+v0x63e3856b2ae0_0 .net "load_shift", 0 0, v0x63e3856b3090_0;  1 drivers
+v0x63e3856b2bb0_0 .net "out", 0 0, L_0x63e3856b3350;  alias, 1 drivers
+v0x63e3856b2c70_0 .var "q", 3 0;
+v0x63e3856b2da0_0 .net "rst", 0 0, v0x63e3856b3260_0;  1 drivers
+E_0x63e385664dc0 .event posedge, v0x63e3856b2da0_0, v0x63e38569ede0_0;
+L_0x63e3856b3350 .part v0x63e3856b2c70_0, 0, 1;
+    .scope S_0x63e38569ec00;
+T_0 ;
+    %wait E_0x63e385664dc0;
+    %load/vec4 v0x63e3856b2da0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 4;
+    %assign/vec4 v0x63e3856b2c70_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x63e3856b2ae0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.2, 8;
+    %load/vec4 v0x63e3856b2a00_0;
+    %assign/vec4 v0x63e3856b2c70_0, 0;
+    %jmp T_0.3;
+T_0.2 ;
+    %pushi/vec4 0, 0, 1;
+    %load/vec4 v0x63e3856b2c70_0;
+    %parti/s 3, 1, 2;
+    %concat/vec4; draw_concat_vec4
+    %assign/vec4 v0x63e3856b2c70_0, 0;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x63e38569ea70;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x63e3856b2f00_0, 0, 1;
+    %end;
+    .thread T_1;
+    .scope S_0x63e38569ea70;
+T_2 ;
+    %delay 5, 0;
+    %load/vec4 v0x63e3856b2f00_0;
+    %inv;
+    %store/vec4 v0x63e3856b2f00_0, 0, 1;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x63e38569ea70;
+T_3 ;
+    %vpi_call 2 17 "$monitor", "time=%0t |clk=%b |rst=%b |in=%b |load_shift=%b  qout=%b ", $time, v0x63e3856b2f00_0, v0x63e3856b3260_0, v0x63e3856b2fc0_0, v0x63e3856b3090_0, v0x63e3856b3190_0 {0 0 0};
+    %vpi_call 2 18 "$dumpfile", "piso.vcd" {0 0 0};
+    %vpi_call 2 19 "$dumpvars" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x63e3856b3260_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x63e3856b3090_0, 0, 1;
+    %pushi/vec4 13, 0, 4;
+    %store/vec4 v0x63e3856b2fc0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x63e3856b3090_0, 0, 1;
+    %delay 55, 0;
+    %vpi_call 2 25 "$finish" {0 0 0};
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "piso_tb.v";
+    "piso.v";
