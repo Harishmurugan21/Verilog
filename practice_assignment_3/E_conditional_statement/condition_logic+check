@@ -1,0 +1,19 @@
+module flag_logic(
+    input flag1,
+    input flag2,
+    input flag3,
+    output reg [2:0] out
+);
+
+always @(*) begin
+    if (flag1 & flag2 & flag3)          // All flags high
+        out = 3'b111;
+    else if ((flag1 & flag2) | (flag1 & flag3) | (flag2 & flag3))  // Any two flags high
+        out = 3'b011;
+    else if (flag1 | flag2 | flag3)     // Only one flag high
+        out = 3'b001;
+    else                                // None high
+        out = 3'b000;
+end
+
+endmodule
