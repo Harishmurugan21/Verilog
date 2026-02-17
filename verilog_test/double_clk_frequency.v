@@ -6,7 +6,7 @@ module clk_gen;
 reg clk;
 reg double_clk;
 //for 50 mhz clk
-parameter clk_period=20;
+parameter clk_period=20;  
 
 
 initial begin
